@@ -3,11 +3,25 @@ const videoElem  = document.querySelector('#camera');
 const takePictureButton = document.querySelector('.button-div');
 const canvas = document.querySelector('#picture');
 const galleryElem = document.querySelector('#gallery')
+const streamElem = document.querySelector('.stream-window');
+const pictureElem = document.querySelector('.picture-window')
+const newPictureElem = document.querySelector('.button-div-pic');
 const ctx = canvas.getContext('2d');
-let stream;
-const images = [];
+const posterElem = document.querySelector('.poster');
 
-/* stream.html // Autostart kamera när behörighet ges*/
+
+let stream;
+let images;
+
+let imagesFromStorage = JSON.parse(localStorage.getItem('weddingApp'))
+if(imagesFromStorage){
+    images = imagesFromStorage  // letar efter existerande bilder och lägger ihop nya + gamla
+} else {
+    images = []; // om inga bilder finns lägger vi till våra nya
+}
+
+
+/* stream.html // Autostreamar kameran när behörighet ges*/
 async function cameraAutoStart(){
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) { // browser support
             stream = await navigator.mediaDevices.getUserMedia({video:true});
@@ -22,7 +36,9 @@ cameraAutoStart();
 takePictureButton.addEventListener ('click', () => {
     ctx.drawImage(videoElem, 0, 0, canvas.width, canvas.height);
     const imageData = canvas.toDataURL('image/png');
-    console.log(imageData);
+    takePictureButton.style.display='none'
+    streamElem.style.display='none' 
+    pictureElem.style.display='block' 
     images.push({
         id: images.lenght,
         image: imageData
@@ -30,6 +46,17 @@ takePictureButton.addEventListener ('click', () => {
     localStorage.setItem('weddingApp', JSON.stringify(images));
 });
 
+newPictureElem.addEventListener ('click', () => {
+    streamElem.style.display='block' // göm videoDiv när vi tar bilden
+    pictureElem.style.display='none' 
+    takePictureButton.style.display = 'block'// visa pictureDiv när vi tar bilden
+});
+
+posterElem.addEventListener ('click', () => {
+    
+    pictureElem.style.display='none' 
+    
+});
 
 function createImage(image){
     const imageElem = document.createElement('img');
@@ -40,7 +67,6 @@ function createImage(image){
 }
 
 function getImages(){
-    const images = JSON.parse(localStorage.getItem('weddingApp'));
     for (let image of images){
         createImage(image);
     }

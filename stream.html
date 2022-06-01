@@ -10,13 +10,18 @@
 </head>
 <body>
     <div class='container'>
-        <div onclick="location.href='capture.html' ; " style="cursor: pointer;" class='button-div'>
-            <span  class='button-div-text'>Föreviga ett ögonblick </span>
+        <div style="cursor: pointer;" class='button-div-pic'>
+            <span  class='button-div-text'>Ta ett nytt kort </span>
         </div>
-        <div><canvas id="picture"></canvas></div>
+        <div  style="cursor: pointer;" class='button-div'>
+            <span  class='button-div-text'>Föreviga ett ögonblick! </span>
+        </div>
         <div class='stream-window'> 
             <video width="342" height="310"src="" id="camera" autoplay></video> 
-        </div>  
+        </div> 
+        <div class="picture-window">
+            <canvas width="342" height="310" id="picture"></canvas>
+        </div>
         <div onclick="location.href='gallery.html' ; " style="cursor: pointer;"class='button-div-gallery'>
           <div class="e1_42"></div>
           <div class="e1_45"></div>
@@ -28,8 +33,7 @@
           <div class="e1_47"></div>
           <div class="e1_50"></div>
         </div>
-      </div>
-      <canvas id="picture"></canvas> 
-      <script src="./js/index.js"></script>
+      </div> 
 </body>
+<script src="./js/index.js"></script>
 </html>
