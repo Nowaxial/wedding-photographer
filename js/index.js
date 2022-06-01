@@ -2,6 +2,8 @@ const cameraButton = document.querySelector('.button-div-camera');
 const videoElem  = document.querySelector('#camera');
 const takePictureButton = document.querySelector('.button-div');
 const canvas = document.querySelector('#picture');
+canvas.width = 342;
+canvas.height = 310;
 const galleryElem = document.querySelector('#gallery')
 const streamElem = document.querySelector('.stream-window');
 const pictureElem = document.querySelector('.picture-window')
@@ -52,11 +54,11 @@ newPictureElem.addEventListener ('click', () => {
     takePictureButton.style.display = 'block'// visa pictureDiv när vi tar bilden
 });
 
-posterElem.addEventListener ('click', () => {
+/* posterElem.addEventListener ('click', () => {
     
     pictureElem.style.display='none' 
     
-});
+}); */
 
 function createImage(image){
     const imageElem = document.createElement('img');
