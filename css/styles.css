@@ -198,6 +198,8 @@ background: #2A2E30;
 
 video,canvas {
     object-fit: fill;
+	max-width: 100%;
+  
 }
 
 .stream-text { 
@@ -387,6 +389,70 @@ video,canvas {
 	position:absolute;
 	left:14.737009048461914px;
 	top:17.684232711791992px;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto Sans');
+
+* {
+    box-sizing: border-box;
+    font-family: Noto Sans;
+}
+
+body {
+    background-color: #2A2E30;
+}
+
+.capturePageButton {
+    background-color: #2A2E30;
+    border: none;
+    float: right;
+}
+
+#gallery {
+    flex: 2 0 21%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px;
+    gap: 2em;
+}
+
+/* #gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px;
+    gap: 2em;
+
+} */
+
+/* Deleteknapp  */
+#gallery div {
+    position: relative;
+    
+}
+
+#gallery div button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    
+    border-radius: 55%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+    background-color: lightslategray !important;
 }
 
 /* End gallery.html*/

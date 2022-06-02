@@ -85,7 +85,7 @@ function sendNotification() {
 
     const notification = new Notification('Bröllopsfotografen', {
       body: text,
-      icon: './icons/favicon.png'// lägg till kamera bild här från figma.
+      icon: './icons/notification.png'
     });
 
     notification.onclick = function() {
@@ -115,10 +115,7 @@ function askNotification() {
       console.log('Permission was granted for notifications');
     });
   }
-  askNotification();
-
-
-
+askNotification();
 
 cameraAutoStart();
 getImages();

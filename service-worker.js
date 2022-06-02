@@ -1,7 +1,7 @@
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('wedding').then((cache) => {
-            return cache.addAll(['offline.html', 'styles.css']);
+            return cache.addAll(['offline.html', '/css/styles.css']);
         })
     )
 
@@ -16,7 +16,7 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', async (event) => {
     console.log(event.request.url);
-    if (!navigator.onLine) { // Kolla om vi har internet eller ej, ger tillbaka true/false
+    if (!navigator.onLine) { 
         console.log('Offline');
         event.respondWith(
             caches.match(event.request).then((response) => {
@@ -24,7 +24,7 @@ self.addEventListener('fetch', async (event) => {
                 if (response) {
                     return response;
                 } else {
-                    return caches.match(new Request('offline.html'));
+                    return caches.match(new Request('offline.html', '/css/styles.css'));
                 }
             })
         );
