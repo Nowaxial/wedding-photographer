@@ -119,4 +119,3 @@ askNotification();
 
 cameraAutoStart();
 getImages();
-
