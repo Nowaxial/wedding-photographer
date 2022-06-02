@@ -1,37 +1,30 @@
 const galleryElem = document.querySelector("#gallery");
 
 
-const images = JSON.parse(localStorage.getItem('wedding-photos-App')); // läggs utanför alla funktioner för att allt skall kunna nå denna
+const images = JSON.parse(localStorage.getItem('wedding-photos-App')); 
 
-//Hämtar från localstorage
 function createImage(image) {
-    const div = document.createElement('div') // detta gör vi för att samla bild med sin tillhörande knapp, se nedan.
+    const div = document.createElement('div') 
     const imageElem = document.createElement('img');
     imageElem.setAttribute('src', image.image);
 
-    //skapar knapp för att ta bort bilder
-    const deleteButton = document.createElement('button'); // skapar knappen = behövs ej göras ngt i HTML filen. 
-    deleteButton.innerHTML = '×'  // detta gör att knappen inte är tom utan får ett stort 'X' i den. 
+    const deleteButton = document.createElement('button');  
+    deleteButton.innerHTML = '×'   
     deleteButton.classList.add('deleteButton');
     deleteButton.addEventListener('click', () => {
         console.log('picture deleted')
         
-        div.remove(); // tar bort knappen efter att bilden raderas
+        div.remove();
         console.log(image);
         console.log(images);
-        let newArr = images.filter(imageInFilter =>   //inageInFilter = går igenom alla bilders ID när dom raderas. Alla bilder vi vill behålla ligger i newArr
-
-            image.image != imageInFilter.image  //Jag vill inte behålla den bilden jag just tog bort
-
-        )
+        let newArr = images.filter(imageInFilter =>  image.image != imageInFilter.image);
         console.log(newArr);
         localStorage.setItem('wedding-photos-App', JSON.stringify(newArr))
     })
 
-    div.append(imageElem); //Lägger in i galleriet
-    div.append(deleteButton); // Lägger till deleteButton/knappen 
+    div.append(imageElem); 
+    div.append(deleteButton);
     galleryElem.append(div); 
-
 }
 
 function getImages() {
