@@ -2,10 +2,22 @@
   "name": "wedding-photographer",
   "version": "1.0.0",
   "description": "",
-  "main": "service-worker.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve ."
   },
   "author": "Maria Toledo",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nowaxial/wedding-photographer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nowaxial/wedding-photographer/issues"
+  },
+  "homepage": "https://github.com/Nowaxial/wedding-photographer#wedding-photographer",
+  "dependencies": {
+    "https-localhost": "^4.7.1"
+  }
 }
