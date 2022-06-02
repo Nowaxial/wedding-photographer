@@ -80,7 +80,7 @@ window.addEventListener('load', async () => {
 });
 
 function sendNotification() {
-    if (notificationPermission !== "granted") { return; } // har dom godkänt notiser, då kan vi fortsätta
+    if (notificationPermission !== "granted") { return; } 
     let text = "Klick! Din bild är nu sparad, klicka här för att se den i galleriet!";
 
     const notification = new Notification('Bröllopsfotografen', {
