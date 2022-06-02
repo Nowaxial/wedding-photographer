@@ -1,6 +1,13 @@
-
+/* 
 * {
 	box-sizing: border-box;
+  } */
+
+  html {
+	box-sizing: border-box;
+  }
+  *, *:before, *:after {
+	box-sizing: inherit;
   }
   
   @media screen and (max-width:600px) {
@@ -43,8 +50,6 @@
 	width:182px;
 	height:182px;
 	position:absolute;
-	left:0px;
-	top:0px;
 }
 .eclipse3 { 
 	border-radius:500px;
@@ -52,27 +57,27 @@
 	width:150.37139892578125px;
 	height:150.37139892578125px;
 	position:absolute;
-	left:15.814319610595703px;
-	top:15.814319610595703px;
+	left: 16px;
+	top:16px;
 }
 
 .eclipse2 { 
 	border-radius:500px;
 	background-color:rgba(255, 255, 255, 0.14000000059604645);
-	width:111.81465148925781px;
-	height:111.81465148925781px;
+	width:112px;
+	height:112px;
 	position:absolute;
-	left:35.09269332885742px;
-	top:35.09269332885742px;
+	left:35px;
+	top:35px;
 }
 .eclipse5 { 
 	border-radius:500px;
 	background-color:rgba(255, 255, 255, 0.14000000059604645);
-	width:80.9692153930664px;
-	height:80.9692153930664px;
+	width:81px;
+	height:81px;
 	position:absolute;
-	left:50.51539611816406px;
-	top:50.51539611816406px;
+	left:51px;
+	top:51px;
 }
 .eclipse1 { 
 	border-radius:500px;
@@ -80,8 +85,8 @@
 	width:9.639192581176758px;
 	height:9.639192581176758px;
 	position:absolute;
-	left:63.859657287597656px;
-	top:76.63157653808594px;
+	left:64px;
+	top:77px;
 }
 .wedding-mark { 
 	color:rgba(255, 255, 255, 1);
@@ -166,10 +171,10 @@ background: #2A2E30;
 	position:absolute;
 	left:24px;
 	top:276px;
-	border-top-left-radius:4px;
+	/* border-top-left-radius:4px;
 	border-top-right-radius:4px;
 	border-bottom-left-radius:4px;
-	border-bottom-right-radius:4px;
+	border-bottom-right-radius:4px; */
 }
 
 .picture-window { 
@@ -179,10 +184,6 @@ background: #2A2E30;
 	position:absolute;
 	left:24px;
 	top:276px;
-	border-top-left-radius:4px;
-	border-top-right-radius:4px;
-	border-bottom-left-radius:4px;
-	border-bottom-right-radius:4px;
 }
 
 video,canvas {
@@ -216,7 +217,6 @@ video,canvas {
 	height:10px;
 	position:absolute;
 	left:26px;
-	top:0px;
 	border-top-left-radius:1px;
 	border-top-right-radius:1px;
 	border-bottom-left-radius:1px;
@@ -252,7 +252,6 @@ video,canvas {
 	height:10px;
 	position:absolute;
 	left:13px;
-	top:0px;
 	border-top-left-radius:1px;
 	border-top-right-radius:1px;
 	border-bottom-left-radius:1px;
@@ -287,8 +286,6 @@ video,canvas {
 	width:10px;
 	height:10px;
 	position:absolute;
-	left:0px;
-	top:0px;
 	border-top-left-radius:1px;
 	border-top-right-radius:1px;
 	border-bottom-left-radius:1px;
@@ -299,7 +296,6 @@ video,canvas {
 	width:10px;
 	height:10px;
 	position:absolute;
-	left:0px;
 	top:13px;
 	border-top-left-radius:1px;
 	border-top-right-radius:1px;
@@ -311,7 +307,6 @@ video,canvas {
 	width:10px;
 	height:10px;
 	position:absolute;
-	left:0px;
 	top:26px;
 	border-top-left-radius:1px;
 	border-top-right-radius:1px;
@@ -322,5 +317,7 @@ video,canvas {
 /*End stream.html*/
 
 /*gallery.html*/
+
+
 
 /* End gallery.html*/
